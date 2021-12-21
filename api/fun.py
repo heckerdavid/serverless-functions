@@ -11,11 +11,12 @@ class handler(BaseHTTPRequestHandler):
 
         name = query.get("name")
         greetings = ['Hello ', "What's up ", 'Thanks for stopping by ', "Welcome to the internet "]
+        punc = ['?', '!', '!!!', '.', '...']
 
         if name:
-            message = f"{random.choice(greetings)}{name}"
+            message = f"{random.choice(greetings)}{name}{random.choice(punc)}"
         else:
-            message = "hi stranger"
+            message = "Hi stranger. Throw your name in the query, if you're feeling frisky"
 
 
         self.send_response(200)
